@@ -13,6 +13,7 @@
     "prisma": "^6.16.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250911.0",
     "wrangler": "^4.35.0"
   }
 }

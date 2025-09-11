@@ -1,11 +1,11 @@
 //middleware to create the prisma client and attach it to the context
 
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Context } from "hono";
 import { createMiddleware } from "hono/factory";
 
-export const prismaClient = createMiddleware( async(c:Context,next:any)=>{
+export const prismaMiddleware = createMiddleware( async(c:Context,next:any)=>{
     if(!c.get("prisma")){
     const prisma = new PrismaClient({
         datasources:{
